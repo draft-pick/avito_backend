@@ -1,0 +1,15 @@
+
+version: '3.3'
+
+services:
+  backend:
+    image: draftpick/avito_backend
+    restart: always
+    volumes:
+      - static_value:/app/static/
+      - media_value:/app/media/
+    tty: true
+ 
+volumes:
+  static_value:
+  media_value:
