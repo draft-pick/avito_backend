@@ -76,6 +76,7 @@ class UsersViewSet(viewsets.ModelViewSet):
 class SegmentsListViewSet(viewsets.ModelViewSet):
     queryset = SegmentsList.objects.all()
     serializer_class = SegmentsListSerializer
+    lookup_field = 'slug'
 
 
 class ActionsViewSet(viewsets.ModelViewSet):
