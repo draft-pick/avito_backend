@@ -31,7 +31,7 @@ class UsersViewSet(viewsets.ModelViewSet):
             ).date() if date_time_before_str else None
         except ValueError:
             return None, Response(
-                {"error": "Неверный формат даты. Попробуйте YYYY-MM-DD."},
+                {"error": "Неверный формат даты. Используйте YYYY-MM-DD."},
                 status=400
             )
 

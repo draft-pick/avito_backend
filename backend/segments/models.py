@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from datetime import datetime
 
 
 class Users(models.Model):
@@ -45,7 +46,7 @@ class Actions(models.Model):
     )
     segment = models.ForeignKey(SegmentsList, on_delete=models.CASCADE)
     action = models.CharField(max_length=255)
-    date_time = models.DateField(auto_now=True)
+    date_time = models.DateField(default=datetime.today)
 
     def __str__(self):
         return f'{self.user} - {self.action}: {self.date_time}'
