@@ -16,7 +16,7 @@ class SegmentsList(models.Model):
     users = models.ManyToManyField(
         Users,
         through='SegmentsUser',
-        related_name='segments'
+        related_name='segments',
     )
 
     def save(self, *args, **kwargs):

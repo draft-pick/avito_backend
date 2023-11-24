@@ -18,7 +18,10 @@ class UsersSerializer(serializers.ModelSerializer):
         с возможностью логирования модели Actions.
     """
     segments = serializers.SlugRelatedField(
-        queryset=SegmentsList.objects.all(), many=True, slug_field='title'
+        queryset=SegmentsList.objects.all(),
+        many=True,
+        slug_field='title',
+        required=False
     )
     actions = serializers.SerializerMethodField()
 
